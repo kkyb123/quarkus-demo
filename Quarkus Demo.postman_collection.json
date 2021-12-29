@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "ff45dd5e-35f3-4b5d-a0e2-ab5a44b46c60",
+		"name": "Quarkus Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Potato",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json()",
+							"if (response.id !== null) {",
+							"    pm.environment.set('vegetableId', response.id)",
+							"    pm.environment.set('vegetableType', response.type.toLowerCase())",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"First Potato\",\n    \"type\": \"Potato\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/vegetable",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vegetable"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Tomato",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json()",
+							"if (response.id !== null) {",
+							"    pm.environment.set('vegetableId', response.id)",
+							"    pm.environment.set('vegetableType', response.type.toLowerCase())",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"First Tomato\",\n    \"type\": \"Tomato\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/vegetable",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vegetable"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch All Vegetables",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json()",
+							"if (response[0] !== undefined && response[0].id !== null) {",
+							"    pm.environment.set('vegetableId', response[0].id)",
+							"    pm.environment.set('vegetableType', response[0].type.toLowerCase())",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/vegetable",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vegetable"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Tomatoes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json()",
+							"if (response[0] !== undefined && response[0].id !== null) {",
+							"    pm.environment.set('vegetableId', response[0].id)",
+							"    pm.environment.set('vegetableType', response[0].type.toLowerCase())",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/vegetable/tomato",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vegetable",
+						"tomato"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Potatoes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json()",
+							"if (response[0] !== undefined && response[0].id !== null) {",
+							"    pm.environment.set('vegetableId', response[0].id)",
+							"    pm.environment.set('vegetableType', response[0].type.toLowerCase())",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/vegetable/potato",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vegetable",
+						"potato"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Vegetable",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json()",
+							"if (response.id !== null) {",
+							"    pm.environment.set('vegetableId', response.id)",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/vegetable/{{vegetableType}}/{{vegetableId}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vegetable",
+						"{{vegetableType}}",
+						"{{vegetableId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Potato",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json()",
+							"if (response.id !== null) {",
+							"    pm.environment.set('vegetableId', response.id)",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/vegetable/potato/{{vegetableId}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vegetable",
+						"potato",
+						"{{vegetableId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Tomato",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json()",
+							"if (response.id !== null) {",
+							"    pm.environment.set('vegetableId', response.id)",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/vegetable/tomato/{{vegetableId}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vegetable",
+						"tomato",
+						"{{vegetableId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Potato",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json()",
+							"if (response.id !== null) {",
+							"    pm.environment.set('vegetableId', response.id)",
+							"    pm.environment.set('vegetableType', response.type.toLowerCase())",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"{{vegetableId}}\",\n    \"name\": \"First Potato Modified\",\n    \"type\": \"Potato\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/vegetable/{{vegetableId}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vegetable",
+						"{{vegetableId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Tomato",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let response = pm.response.json()",
+							"if (response.id !== null) {",
+							"    pm.environment.set('vegetableId', response.id)",
+							"    pm.environment.set('vegetableType', response.type.toLowerCase())",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"{{vegetableId}}\",\n    \"name\": \"First Tomato Modified\",\n    \"type\": \"Tomato\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/vegetable/{{vegetableId}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vegetable",
+						"{{vegetableId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
