@@ -1,0 +1,12 @@
+myapp:
+  flyway:
+    migrate: true
+    url: jdbc:postgresql://localhost:5432/vegetable
+quarkus:
+  datasource:
+    db-kind: postgresql
+    username: root
+    password: root
+    jdbc: false
+    reactive:
+      url: vertx-reactive:postgresql://localhost:5432/vegetable
