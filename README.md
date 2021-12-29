@@ -1,4 +1,4 @@
-# skill-demo Project
+# Quarkus Demo Project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
